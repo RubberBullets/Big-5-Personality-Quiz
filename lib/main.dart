@@ -319,6 +319,14 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     });
   }
 
+//reset quiz function//
+  void resetQuiz() {
+    setState(() {
+      
+      questionIndex = 0;
+    });
+  }
+
 //Scoring functions for big 5 segments//
 
   extroversion() {
@@ -444,6 +452,11 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
               Center(
                   child: Text(
                       'Your Openness to Experience Score is: ' + openness().toString()),
+                ),
+              RaisedButton(
+                  child: Text(
+                      'Restart Quiz '),
+                  onPressed: resetQuiz,
                 ),
             ],
           ),
