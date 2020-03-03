@@ -351,7 +351,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[21]['score'] +
         questions[26]['score'] -
         questions[31]['score'] +
-        questions[36]['score'] -
+        questions[36]['score'] +
         questions[41]['score'] +
         questions[46]['score']);
   }
@@ -365,7 +365,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[27]['score'] +
         questions[32]['score'] -
         questions[37]['score'] +
-        questions[42]['score'] -
+        questions[42]['score'] +
         questions[47]['score']);
   }
   neuroticism() {
@@ -374,11 +374,11 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[8]['score'] -
         questions[13]['score'] +
         questions[18]['score'] -
-        questions[23]['score'] +
+        questions[23]['score'] -
         questions[28]['score'] -
-        questions[33]['score'] +
+        questions[33]['score'] -
         questions[38]['score'] -
-        questions[43]['score'] +
+        questions[43]['score'] -
         questions[48]['score']);
   }
   openness() {
@@ -389,9 +389,9 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[19]['score'] +
         questions[24]['score'] -
         questions[29]['score'] +
-        questions[34]['score'] -
+        questions[34]['score'] +
         questions[39]['score'] +
-        questions[44]['score'] -
+        questions[44]['score'] +
         questions[49]['score']);
   }
   //Initializing build//
@@ -404,33 +404,35 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         title: Text('BIG 5 Personality Quiz'),
       ),
       body: questionIndex < questions.length
-          ? Column(
-              children: <Widget>[
-                Container(
-                  child: Text(questions[questionIndex]['question text']),
-                ),
-                RaisedButton(
-                  child: Text('Disagree'),
-                  onPressed: nextQuestionD,
-                ),
-                RaisedButton(
-                  child: Text('Slightly Disagree'),
-                  onPressed: nextQuestionSD,
-                ),
-                RaisedButton(
-                  child: Text('Neutral'),
-                  onPressed: nextQuestionN,
-                ),
-                RaisedButton(
-                  child: Text('Slightly Agree'),
-                  onPressed: nextQuestionSA,
-                ),
-                RaisedButton(
-                  child: Text('Agree'),
-                  onPressed: nextQuestionA,
-                ),
-              ],
-            )
+          ? Center(
+            child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Text(questions[questionIndex]['question text']),
+                  ),
+                  RaisedButton(
+                    child: Text('Disagree'),
+                    onPressed: nextQuestionD,
+                  ),
+                  RaisedButton(
+                    child: Text('Slightly Disagree'),
+                    onPressed: nextQuestionSD,
+                  ),
+                  RaisedButton(
+                    child: Text('Neutral'),
+                    onPressed: nextQuestionN,
+                  ),
+                  RaisedButton(
+                    child: Text('Slightly Agree'),
+                    onPressed: nextQuestionSA,
+                  ),
+                  RaisedButton(
+                    child: Text('Agree'),
+                    onPressed: nextQuestionA,
+                  ),
+                ],
+              ),
+          )
           : Column(
             children: <Widget>[
               Center(
