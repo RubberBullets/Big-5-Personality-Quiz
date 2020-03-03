@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import './Questions.dart';
 
-
 void main() {
   runApp(MyBiGFiveQuizApp());
 }
@@ -272,218 +271,103 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     },
   ];
 
-  // var pointSystem = {
-  //  'Disagree': 1,
-  //  'Slightly Disagree': 2,
-  //  'Neutral': 3,
-  //  'Slightly Agree': 4,
-  //  'Agree': 5,
-  //};
-
-  
-
   void nextQuestionD() {
-    //questions[questionIndex]['score'] =  1;
-    //setState(() {
-     // questionIndex = questionIndex + 1;
-    //  print(questionIndex);
-    //});
-    //print(pointSystem['Disagree']);
-    //print(questions[questionIndex]['score']);
-
-    //questions[questionIndex]['score'] =  1;
-
-    //print(questions[questionIndex]['score']);
-    print('first question score= ' +questions[0]['score'].toString());
+    print('first question score= ' + questions[0]['score'].toString());
 
     setState(() {
-        questions[questionIndex]['score'] =  1;
+      questions[questionIndex]['score'] = 1;
       questionIndex = questionIndex + 1;
       print(questionIndex);
     });
-    
-    if (questionIndex < questions.length) {
-      
-    print(questions[questionIndex]['score']);
-      print('another question still to come');
-    } //else {
-      //questions[questionIndex]['score'] =  1;
-     // print(extroversion);}
-     print('first question score= ' +questions[0]['score'].toString());
-  }
-  void nextQuestionSD() {
-    //questions[questionIndex]['score'] =  2;
-    //setState(() {
-     // questionIndex = questionIndex + 1;
-    //  print(questionIndex);
-    //});
-    //print(pointSystem['Slightly Disagree']);
-    //print(questions[questionIndex]['score']);
-
-    //questions[questionIndex]['score'] =  2;
-
-    //print(questions[questionIndex]['score']);
-    print('first question score= ' +questions[0]['score'].toString());
-
-    setState(() {
-        questions[questionIndex]['score'] =  2;
-      questionIndex = questionIndex + 1;
-      print(questionIndex);
-    });
-    
-    if (questionIndex < questions.length) {
-      
-    print(questions[questionIndex]['score']);
-      print('another question still to come');
-    } //else {
-      //questions[questionIndex]['score'] =  2;
-     // print(extroversion);}
-     print('first question score= ' +questions[0]['score'].toString());
-  }
-  void nextQuestionN() {
-    //questions[questionIndex]['score'] =  3;
-    //setState(() {
-     // questionIndex = questionIndex + 1;
-    //  print(questionIndex);
-    //});
-    //print(pointSystem['Neutral']);
-    //print(questions[questionIndex]['score']);
-
-    //questions[questionIndex]['score'] =  3;
-
-    //print(questions[questionIndex]['score']);
-    print('first question score= ' +questions[0]['score'].toString());
-
-    setState(() {
-        questions[questionIndex]['score'] =  3;
-      questionIndex = questionIndex + 1;
-      print(questionIndex);
-    });
-    
-    if (questionIndex < questions.length) {
-      
-    print(questions[questionIndex]['score']);
-      print('another question still to come');
-    } //else {
-      //questions[questionIndex]['score'] =  3;
-     // print(extroversion);}
-     print('first question score= ' +questions[0]['score'].toString());
-     setState(() {
-      questionIndex = questionIndex + 1;
-      print(questionIndex);
-    });
-    
-    print(questions[questionIndex]['score']);
-
-    questions[questionIndex]['score'] =  3;
-
-    print(questions[questionIndex]['score']);
 
     if (questionIndex < questions.length) {
+      print(questions[questionIndex]['score']);
       print('another question still to come');
     }
+    print('first question score= ' + questions[0]['score'].toString());
   }
+
+  void nextQuestionSD() {
+    setState(() {
+      questions[questionIndex]['score'] = 2;
+      questionIndex = questionIndex + 1;
+    });
+  }
+
+  void nextQuestionN() {
+    setState(() {
+      questions[questionIndex]['score'] = 3;
+      questionIndex = questionIndex + 1;
+    });
+  }
+
   void nextQuestionSA() {
-    //questions[questionIndex]['score'] =  4;
-    //setState(() {
-     // questionIndex = questionIndex + 1;
-    //  print(questionIndex);
-    //});
-    //print(pointSystem['SlightlyAgree']);
-    //print(questions[questionIndex]['score']);
-
-    //questions[questionIndex]['score'] =  4;
-
-    //print(questions[questionIndex]['score']);
-    print('first question score= ' +questions[0]['score'].toString());
-
     setState(() {
-        questions[questionIndex]['score'] =  4;
+      questions[questionIndex]['score'] = 4;
       questionIndex = questionIndex + 1;
-      print(questionIndex);
     });
-    
-    if (questionIndex < questions.length) {
-      
-    print(questions[questionIndex]['score']);
-      print('another question still to come');
-    } //else {
-      //questions[questionIndex]['score'] =  4;
-     // print(extroversion);}
-     print('first question score= ' +questions[0]['score'].toString());
   }
+
   void nextQuestionA() {
-    //questions[questionIndex]['score'] =  5;
-    //setState(() {
-     // questionIndex = questionIndex + 1;
-    //  print(questionIndex);
-    //});
-    //print(pointSystem['Agree']);
-    //print(questions[questionIndex]['score']);
-
-    //questions[questionIndex]['score'] =  5;
-
-    //print(questions[questionIndex]['score']);
-    print('first question score= ' +questions[0]['score'].toString());
-
     setState(() {
-        questions[questionIndex]['score'] =  5;
+      questions[questionIndex]['score'] = 5;
       questionIndex = questionIndex + 1;
-      print(questionIndex);
     });
-    
-    if (questionIndex < questions.length) {
-      
-    print(questions[questionIndex]['score']);
-      print('another question still to come');
-    } //else {
-      //questions[questionIndex]['score'] =  5;
-     // print(extroversion);}
-     print('first question score= ' +questions[0]['score'].toString());
   }
 
-  
-
-   extroversion () {
-    return (20 + questions[0]['score'] - questions[5]['score'] + questions[10]['score'] - questions[15]['score']+ questions[20]['score'] -questions[25]['score'] + questions[30]['score'] - questions[35]['score'] + questions[40]['score'] -questions[45]['score']);
-    
+  extroversion() {
+    return (20 +
+        questions[0]['score'] -
+        questions[5]['score'] +
+        questions[10]['score'] -
+        questions[15]['score'] +
+        questions[20]['score'] -
+        questions[25]['score'] +
+        questions[30]['score'] -
+        questions[35]['score'] +
+        questions[40]['score'] -
+        questions[45]['score']);
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('BIG 5 Personality Quiz'),
-          ),
-          body: questionIndex < questions.length ? Column(
-            children: <Widget>[
-              Container(
-                child: Text(questions[questionIndex]['question text']),
-              ),
-              RaisedButton(
-                child: Text('Disagree'),
-                onPressed: nextQuestionD,
-              ),
-              RaisedButton(
-                child: Text('Slightly Disagree'),
-                onPressed: nextQuestionSD,
-              ),
-              RaisedButton(
-                child: Text('Neutral'),
-                onPressed: nextQuestionN,
-              ),
-              RaisedButton(
-                child: Text('Slightly Agree'),
-                onPressed: nextQuestionSA,
-              ),
-              RaisedButton(
-                child: Text('Agree'),
-                onPressed: nextQuestionA,
-              ),
-            ],
-          ): Center(child: Text(extroversion().toString()),
-          ),)
-    );
+        home: Scaffold(
+      appBar: AppBar(
+        title: Text('BIG 5 Personality Quiz'),
+      ),
+      body: questionIndex < questions.length
+          ? Column(
+              children: <Widget>[
+                Container(
+                  child: Text(questions[questionIndex]['question text']),
+                ),
+                RaisedButton(
+                  child: Text('Disagree'),
+                  onPressed: nextQuestionD,
+                ),
+                RaisedButton(
+                  child: Text('Slightly Disagree'),
+                  onPressed: nextQuestionSD,
+                ),
+                RaisedButton(
+                  child: Text('Neutral'),
+                  onPressed: nextQuestionN,
+                ),
+                RaisedButton(
+                  child: Text('Slightly Agree'),
+                  onPressed: nextQuestionSA,
+                ),
+                RaisedButton(
+                  child: Text('Agree'),
+                  onPressed: nextQuestionA,
+                ),
+              ],
+            )
+          : Center(
+              child: Text(
+                  'Your Extroversion Score is: ' + extroversion().toString()),
+            ),
+    ));
   }
 }
