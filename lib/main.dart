@@ -287,10 +287,10 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     if (questionIndex < questions.length) {
       print(questions[questionIndex]['score']);
       print('another question still to come');
+      print(questions.length);
     }
     print('first question score= ' + questions[0]['score'].toString());
   }
-
   void nextQuestionSD() {
     setState(() {
       questions[questionIndex]['score'] = 2;
@@ -325,6 +325,13 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
       
       questionIndex = 0;
     });
+  }
+
+//Progress Indicator function//
+  currentProgress(questionsCompleted,totalQuestions){
+    
+     return (questionsCompleted / totalQuestions);
+    
   }
 
 //Scoring functions for big 5 segments//
@@ -407,6 +414,19 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
           ? Center(
             child: Column(
                 children: <Widget>[
+                  Container(
+                    //color: Colors.grey[600],
+                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(200)),color: Colors.grey[600], ),
+                    width: 200,
+                    height: 200,
+                    padding: EdgeInsets.fromLTRB(15,15,15,15),
+                    child: CircularProgressIndicator(value: currentProgress(questionIndex,questions.length),
+                      backgroundColor: Colors.grey,
+                      strokeWidth: 10,
+                      semanticsLabel: 'progress',
+
+                    ),
+                  ),
                   Container(
                     child: Text(questions[questionIndex]['question text']),
                   ),
