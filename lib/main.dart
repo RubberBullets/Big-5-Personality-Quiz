@@ -416,9 +416,9 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
                 children: <Widget>[
                   Container(
                     //color: Colors.grey[600],
-                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(200)),color: Colors.grey[600], ),
-                    width: 200,
-                    height: 200,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)),color: Colors.grey[600], ),
+                    width: 100,
+                    height: 100,
                     padding: EdgeInsets.fromLTRB(15,15,15,15),
                     child: CircularProgressIndicator(value: currentProgress(questionIndex,questions.length),
                       backgroundColor: Colors.grey,
@@ -429,6 +429,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
                   ),
                   Container(
                     child: Text(questions[questionIndex]['question text']),
+                    padding: EdgeInsets.fromLTRB(15,15,15,15),
                   ),
                   RaisedButton(
                     child: Text('Disagree'),
