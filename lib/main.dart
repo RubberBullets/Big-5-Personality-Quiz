@@ -291,6 +291,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     }
     print('first question score= ' + questions[0]['score'].toString());
   }
+
   void nextQuestionSD() {
     setState(() {
       questions[questionIndex]['score'] = 2;
@@ -322,16 +323,13 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
 //reset quiz function//
   void resetQuiz() {
     setState(() {
-      
       questionIndex = 0;
     });
   }
 
 //Progress Indicator function//
-  currentProgress(questionsCompleted,totalQuestions){
-    
-     return (questionsCompleted / totalQuestions);
-    
+  currentProgress(questionsCompleted, totalQuestions) {
+    return (questionsCompleted / totalQuestions);
   }
 
 //Scoring functions for big 5 segments//
@@ -349,6 +347,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[40]['score'] -
         questions[45]['score']);
   }
+
   agreeableness() {
     return (14 -
         questions[1]['score'] +
@@ -362,6 +361,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[41]['score'] +
         questions[46]['score']);
   }
+
   conscientiousness() {
     return (14 +
         questions[2]['score'] -
@@ -375,6 +375,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[42]['score'] +
         questions[47]['score']);
   }
+
   neuroticism() {
     return (38 -
         questions[3]['score'] +
@@ -388,6 +389,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
         questions[43]['score'] -
         questions[48]['score']);
   }
+
   openness() {
     return (8 +
         questions[4]['score'] -
@@ -406,83 +408,133 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+          primaryColor: Colors.grey[900],
+          accentColor: Colors.grey[800],
+          canvasColor: Colors.grey[850],
+        ),
         home: Scaffold(
-      appBar: AppBar(
-        title: Text('BIG 5 Personality Quiz'),
-      ),
-      body: questionIndex < questions.length
-          ? Center(
-            child: Column(
-                children: <Widget>[
-                  Container(
-                    //color: Colors.grey[600],
-                    decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(100)),color: Colors.grey[600], ),
-                    width: 100,
-                    height: 100,
-                    padding: EdgeInsets.fromLTRB(15,15,15,15),
-                    child: CircularProgressIndicator(value: currentProgress(questionIndex,questions.length),
-                      backgroundColor: Colors.grey,
-                      strokeWidth: 10,
-                      semanticsLabel: 'progress',
-
-                    ),
-                  ),
-                  Container(
-                    child: Text(questions[questionIndex]['question text']),
-                    padding: EdgeInsets.fromLTRB(15,15,15,15),
-                  ),
-                  RaisedButton(
-                    child: Text('Disagree'),
-                    onPressed: nextQuestionD,
-                  ),
-                  RaisedButton(
-                    child: Text('Slightly Disagree'),
-                    onPressed: nextQuestionSD,
-                  ),
-                  RaisedButton(
-                    child: Text('Neutral'),
-                    onPressed: nextQuestionN,
-                  ),
-                  RaisedButton(
-                    child: Text('Slightly Agree'),
-                    onPressed: nextQuestionSA,
-                  ),
-                  RaisedButton(
-                    child: Text('Agree'),
-                    onPressed: nextQuestionA,
-                  ),
-                ],
-              ),
-          )
-          : Column(
-            children: <Widget>[
-              Center(
-                  child: Text(
-                      'Your Extroversion Score is: ' + extroversion().toString()),
-                ),
-              Center(
-                  child: Text(
-                      'Your Agreeableness Score is: ' + agreeableness().toString()),
-                ),
-              Center(
-                  child: Text(
-                      'Your Conscientiousness Score is: ' + conscientiousness().toString()),
-                ),
-              Center(
-                  child: Text(
-                      'Your Neuroticism Score is: ' + neuroticism().toString()),
-                ),
-              Center(
-                  child: Text(
-                      'Your Openness to Experience Score is: ' + openness().toString()),
-                ),
-              RaisedButton(
-                  child: Text(
-                      'Restart Quiz '),
-                  onPressed: resetQuiz,
-                ),
-            ],
+          appBar: AppBar(
+            title: Text('BIG 5 Personality Quiz'),
           ),
-    ));
+          body: questionIndex < questions.length
+              ? Center(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        //color: Colors.grey[600],
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(9.5, 9.5),
+                                blurRadius: 16.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-9.5, -9.5),
+                                blurRadius: 16.5,
+                              )
+                            ]),
+                        width: 100,
+                        height: 100,
+                        padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
+                        margin: EdgeInsets.fromLTRB(15, 30, 15, 30),
+                        //child: Container(
+                        //  width: 100,
+                        //  height: 100,
+                        //  padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
+                          
+                        //  decoration: BoxDecoration(
+                        //    color: Colors.transparent,
+                        //    borderRadius: BorderRadius.all(Radius.circular(15)),
+                        //    boxShadow: [
+                        //      BoxShadow(
+                        //        color: Colors.grey[700],
+                        //        offset: const Offset(0.0, 0.0),
+                        //        spreadRadius: 2,
+                        //      ),
+                        //      BoxShadow(
+                        //        color: Colors.grey[850],
+                        //        offset: const Offset(0.0, 0.0),
+                        //        spreadRadius: 1.0,
+                        //        blurRadius: 2.0,
+                        //      ),
+                        //    ],
+                        //  ),
+                          child: CircularProgressIndicator(
+                            value: currentProgress(
+                                questionIndex, questions.length),
+                            backgroundColor: Colors.grey,
+                            strokeWidth: 10,
+                            semanticsLabel: 'progress',
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.blue),
+                          ),
+                        //),
+                      ),
+                      Container(
+                        child: Text(
+                          questions[questionIndex]['question text'],
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                      ),
+                      RaisedButton(
+                        child: Text('Disagree'),
+                        onPressed: nextQuestionD,
+                      ),
+                      RaisedButton(
+                        child: Text('Slightly Disagree'),
+                        onPressed: nextQuestionSD,
+                      ),
+                      RaisedButton(
+                        child: Text('Neutral'),
+                        onPressed: nextQuestionN,
+                      ),
+                      RaisedButton(
+                        child: Text('Slightly Agree'),
+                        onPressed: nextQuestionSA,
+                      ),
+                      RaisedButton(
+                        child: Text('Agree'),
+                        onPressed: nextQuestionA,
+                      ),
+                    ],
+                  ),
+                )
+              : Column(
+                  children: <Widget>[
+                    Center(
+                      child: Text('Your Extroversion Score is: ' +
+                          extroversion().toString()),
+                    ),
+                    Center(
+                      child: Text('Your Agreeableness Score is: ' +
+                          agreeableness().toString()),
+                    ),
+                    Center(
+                      child: Text('Your Conscientiousness Score is: ' +
+                          conscientiousness().toString()),
+                    ),
+                    Center(
+                      child: Text('Your Neuroticism Score is: ' +
+                          neuroticism().toString()),
+                    ),
+                    Center(
+                      child: Text('Your Openness to Experience Score is: ' +
+                          openness().toString()),
+                    ),
+                    RaisedButton(
+                      child: Text('Restart Quiz '),
+                      onPressed: resetQuiz,
+                    ),
+                  ],
+                ),
+        ));
   }
 }
