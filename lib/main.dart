@@ -248,7 +248,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     },
     {
       'question number': 46,
-      'question text': 'I Make people feel at ease.',
+      'question text': 'I Am quiet around strangers.',
       'score': null,
     },
     {
@@ -410,7 +410,7 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
     return MaterialApp(
         theme: ThemeData(
           primaryColor: Colors.grey[900],
-          accentColor: Colors.grey[800],
+          accentColor: Colors.grey[700],
           canvasColor: Colors.grey[850],
         ),
         home: Scaffold(
@@ -421,119 +421,361 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
               ? Center(
                   child: Column(
                     children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            //color: Colors.grey[600],
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                color: Colors.grey[850],
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey[900],
+                                    offset: new Offset(9.5, 9.5),
+                                    blurRadius: 16.5,
+                                  ),
+                                  BoxShadow(
+                                    color: Colors.grey[800],
+                                    offset: new Offset(-9.5, -9.5),
+                                    blurRadius: 16.5,
+                                  )
+                                ]),
+                            width: 100,
+                            height: 100,
+                            padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
+                            margin: EdgeInsets.fromLTRB(15, 30, 15, 30),
+                            //child: Container(
+                            //  width: 100,
+                            //  height: 100,
+                            //  padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
+
+                            //  decoration: BoxDecoration(
+                            //    color: Colors.transparent,
+                            //    borderRadius: BorderRadius.all(Radius.circular(15)),
+                            //    boxShadow: [
+                            //      BoxShadow(
+                            //        color: Colors.grey[700],
+                            //        offset: const Offset(0.0, 0.0),
+                            //        spreadRadius: 2,
+                            //      ),
+                            //      BoxShadow(
+                            //        color: Colors.grey[850],
+                            //        offset: const Offset(0.0, 0.0),
+                            //        spreadRadius: 1.0,
+                            //        blurRadius: 2.0,
+                            //      ),
+                            //    ],
+                            //  ),
+                            child: CircularProgressIndicator(
+                              value: currentProgress(
+                                  questionIndex, questions.length),
+                              backgroundColor: Colors.grey,
+                              strokeWidth: 10,
+                              semanticsLabel: 'progress',
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                            ),
+                            //),
+                          ),
+                          Expanded(
+                            child: Container(
+                              child: Text(
+                                questions[questionIndex]['question text'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              padding: EdgeInsets.fromLTRB(15, 30, 15, 30),
+                              margin: EdgeInsets.fromLTRB(25, 25, 25, 25),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  color: Colors.grey[850],
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey[900],
+                                      offset: new Offset(9.5, 9.5),
+                                      blurRadius: 16.5,
+                                    ),
+                                    BoxShadow(
+                                      color: Colors.grey[800],
+                                      offset: new Offset(-9.5, -9.5),
+                                      blurRadius: 16.5,
+                                    )
+                                  ]),
+                            ),
+                          ),
+                        ],
+                      ),
+                      //Container(
+                      //  child: Text(
+                      //    questions[questionIndex]['question text'],
+                      //    style: TextStyle(
+                      //      color: Colors.white,
+                      //      fontSize: 20,
+                      //    ),
+                      //  ),
+                      //  padding: EdgeInsets.fromLTRB(15, 30, 15, 30),
+                      //  margin: EdgeInsets.fromLTRB(25, 15, 15, 35),
+                      //  decoration: BoxDecoration(
+                      //      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      //      color: Colors.grey[850],
+                      //      boxShadow: [
+                      //        BoxShadow(
+                      //          color: Colors.grey[900],
+                      //          offset: new Offset(9.5, 9.5),
+                      //          blurRadius: 16.5,
+                      //        ),
+                      //        BoxShadow(
+                      //          color: Colors.grey[800],
+                      //          offset: new Offset(-9.5, -9.5),
+                      //          blurRadius: 16.5,
+                      //        )
+                      //      ]),
+                      //),
+                      // Wrap(
+                      //   spacing: 2,
+                      //   runSpacing: 3,
+                      //   alignment: WrapAlignment.spaceEvenly,
+                      //   children: <Widget>[
                       Container(
-                        //color: Colors.grey[600],
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             color: Colors.grey[850],
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey[900],
-                                offset: new Offset(9.5, 9.5),
-                                blurRadius: 16.5,
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
                               ),
                               BoxShadow(
                                 color: Colors.grey[800],
-                                offset: new Offset(-9.5, -9.5),
-                                blurRadius: 16.5,
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
                               )
                             ]),
-                        width: 100,
-                        height: 100,
-                        padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
-                        margin: EdgeInsets.fromLTRB(15, 30, 15, 30),
-                        //child: Container(
-                        //  width: 100,
-                        //  height: 100,
-                        //  padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
-                          
-                        //  decoration: BoxDecoration(
-                        //    color: Colors.transparent,
-                        //    borderRadius: BorderRadius.all(Radius.circular(15)),
-                        //    boxShadow: [
-                        //      BoxShadow(
-                        //        color: Colors.grey[700],
-                        //        offset: const Offset(0.0, 0.0),
-                        //        spreadRadius: 2,
-                        //      ),
-                        //      BoxShadow(
-                        //        color: Colors.grey[850],
-                        //        offset: const Offset(0.0, 0.0),
-                        //        spreadRadius: 1.0,
-                        //        blurRadius: 2.0,
-                        //      ),
-                        //    ],
-                        //  ),
-                          child: CircularProgressIndicator(
-                            value: currentProgress(
-                                questionIndex, questions.length),
-                            backgroundColor: Colors.grey,
-                            strokeWidth: 10,
-                            semanticsLabel: 'progress',
-                            valueColor:
-                                AlwaysStoppedAnimation<Color>(Colors.blue),
-                          ),
-                        //),
+                        child: RaisedButton(
+                          elevation: 0,
+                          focusElevation: 0,
+                          hoverElevation: 0,
+                          textColor: Colors.blue,
+                          color: Colors.grey[850],
+                          child: Text('Disagree'),
+                          onPressed: nextQuestionD,
+                        ),
                       ),
                       Container(
-                        child: Text(
-                          questions[questionIndex]['question text'],
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
+                              )
+                            ]),
+                        child: RaisedButton(
+                          elevation: 0,
+                          focusElevation: 0,
+                          hoverElevation: 0,
+                          textColor: Colors.blue,
+                          color: Colors.grey[850],
+                          child: Text('Slightly Disagree'),
+                          onPressed: nextQuestionSD,
                         ),
-                        padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
                       ),
-                      RaisedButton(
-                        child: Text('Disagree'),
-                        onPressed: nextQuestionD,
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
+                              )
+                            ]),
+                        child: RaisedButton(
+                          elevation: 0,
+                          focusElevation: 0,
+                          hoverElevation: 0,
+                          textColor: Colors.blue,
+                          color: Colors.grey[850],
+                          child: Text('Neutral'),
+                          onPressed: nextQuestionN,
+                        ),
                       ),
-                      RaisedButton(
-                        child: Text('Slightly Disagree'),
-                        onPressed: nextQuestionSD,
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
+                              )
+                            ]),
+                        child: RaisedButton(
+                          elevation: 0,
+                          focusElevation: 0,
+                          hoverElevation: 0,
+                          textColor: Colors.blue,
+                          color: Colors.grey[850],
+                          child: Text('Slightly Agree'),
+                          onPressed: nextQuestionSA,
+                        ),
                       ),
-                      RaisedButton(
-                        child: Text('Neutral'),
-                        onPressed: nextQuestionN,
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
+                              )
+                            ]),
+                        child: RaisedButton(
+                          elevation: 0,
+                          focusElevation: 0,
+                          hoverElevation: 0,
+                          textColor: Colors.blue,
+                          color: Colors.grey[850],
+                          child: Text('Agree'),
+                          onPressed: nextQuestionA,
+                        ),
                       ),
-                      RaisedButton(
-                        child: Text('Slightly Agree'),
-                        onPressed: nextQuestionSA,
-                      ),
-                      RaisedButton(
-                        child: Text('Agree'),
-                        onPressed: nextQuestionA,
-                      ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 )
-              : Column(
-                  children: <Widget>[
-                    Center(
-                      child: Text('Your Extroversion Score is: ' +
-                          extroversion().toString()),
-                    ),
-                    Center(
-                      child: Text('Your Agreeableness Score is: ' +
-                          agreeableness().toString()),
-                    ),
-                    Center(
-                      child: Text('Your Conscientiousness Score is: ' +
-                          conscientiousness().toString()),
-                    ),
-                    Center(
-                      child: Text('Your Neuroticism Score is: ' +
-                          neuroticism().toString()),
-                    ),
-                    Center(
-                      child: Text('Your Openness to Experience Score is: ' +
-                          openness().toString()),
-                    ),
-                    RaisedButton(
-                      child: Text('Restart Quiz '),
-                      onPressed: resetQuiz,
-                    ),
-                  ],
+              : SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(
+                          'Your Extroversion Score is: ' +
+                              extroversion().toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Text(
+                          'this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 50,
+                          ),
+                          ),
+                      Center(
+                        child: Text(
+                          'Your Agreeableness Score is: ' +
+                              agreeableness().toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          'Your Conscientiousness Score is: ' +
+                              conscientiousness().toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          'Your Neuroticism Score is: ' +
+                              neuroticism().toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          'Your Openness to Experience Score is: ' +
+                              openness().toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.grey[850],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey[900],
+                                offset: new Offset(5.5, 5.5),
+                                blurRadius: 10.5,
+                              ),
+                              BoxShadow(
+                                color: Colors.grey[800],
+                                offset: new Offset(-5.5, -5.5),
+                                blurRadius: 10.5,
+                              )
+                            ]),
+                        child: RaisedButton(
+                          elevation: 0,
+                            focusElevation: 0,
+                            hoverElevation: 0,
+                            textColor: Colors.blue,
+                            color: Colors.grey[850],
+                          child: Text('Restart Quiz '),
+                          onPressed: resetQuiz,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
         ));
   }
