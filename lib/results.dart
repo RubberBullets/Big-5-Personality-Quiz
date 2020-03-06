@@ -14,15 +14,34 @@ class Results extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   child: Column(
                     children: <Widget>[
-                      Center(
-                        child: Text(
-                          'Your Extroversion Score is: ' +
-                              extroversion().toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
+                      Row(
+                        children: <Widget>[
+                          Container(
+                                  height: 50,
+                                  width: 50,
+                                  margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                  child: CircularProgressIndicator(
+                                    value: extroversionScore(
+                                        extroversion()),
+                                    backgroundColor: Colors.grey,
+                                    strokeWidth: 10,
+                                    semanticsLabel: 'progress',
+                                    valueColor:
+                                        AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  ),
+                                ),
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              'Your Extroversion Score is: ' +
+                                  extroversion().toString(),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                       Text(
                           'this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.',

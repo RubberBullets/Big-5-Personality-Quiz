@@ -6,6 +6,25 @@ import './questions.dart';
     return (questionsCompleted / totalQuestions);
   }
 
+
+
+
+  extroversionScore(extroversion){
+    return (extroversion / 40);
+  }
+  agreeablenessScore(agreeableness){
+    return (agreeableness / 40);
+  }
+  conscientiousnessScore(conscientiousness){
+    return (conscientiousness / 40);
+  }
+  neuroticismScore(neuroticism){
+    return (neuroticism / 40);
+  }
+  opennessScore(openness){
+    return (openness / 40);
+  }
+
 //Scoring functions for big 5 segments//
 
   extroversion() {

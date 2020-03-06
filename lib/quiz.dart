@@ -41,7 +41,7 @@ class Quiz extends StatelessWidget {
                                     blurRadius: 16.5,
                                   )
                                 ]),
-                            width: double.maxFinite,
+                            width: double.infinity,
                             //height: 100,
                             padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
                             margin: EdgeInsets.fromLTRB(15, 30, 15, 30),
