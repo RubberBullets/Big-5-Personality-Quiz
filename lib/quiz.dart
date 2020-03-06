@@ -22,8 +22,7 @@ class Quiz extends StatelessWidget {
     return Center(
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
+                      
                           Container(
                             //color: Colors.grey[600],
                             decoration: BoxDecoration(
@@ -42,8 +41,8 @@ class Quiz extends StatelessWidget {
                                     blurRadius: 16.5,
                                   )
                                 ]),
-                            width: 100,
-                            height: 100,
+                            width: double.maxFinite,
+                            //height: 100,
                             padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
                             margin: EdgeInsets.fromLTRB(15, 30, 15, 30),
                             //child: Container(
@@ -68,48 +67,39 @@ class Quiz extends StatelessWidget {
                             //      ),
                             //    ],
                             //  ),
-                            child: CircularProgressIndicator(
-                              value: currentProgress(
-                                  questionIndex, questions.length),
-                              backgroundColor: Colors.grey,
-                              strokeWidth: 10,
-                              semanticsLabel: 'progress',
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                            child: Row(
+                              
+                              children: <Widget>[
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                  child: CircularProgressIndicator(
+                                    value: currentProgress(
+                                        questionIndex, questions.length),
+                                    backgroundColor: Colors.grey,
+                                    strokeWidth: 10,
+                                    semanticsLabel: 'progress',
+                                    valueColor:
+                                        AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                            child: Text(
+                              questions[questionIndex]['question text'],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                              ],
                             ),
                             //),
+                          //),
                           ),
-                          Expanded(
-                            child: Container(
-                              child: Text(
-                                questions[questionIndex]['question text'],
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              padding: EdgeInsets.fromLTRB(15, 30, 15, 30),
-                              margin: EdgeInsets.fromLTRB(25, 25, 25, 25),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                  color: Colors.grey[850],
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey[900],
-                                      offset: new Offset(9.5, 9.5),
-                                      blurRadius: 16.5,
-                                    ),
-                                    BoxShadow(
-                                      color: Colors.grey[800],
-                                      offset: new Offset(-9.5, -9.5),
-                                      blurRadius: 16.5,
-                                    )
-                                  ]),
-                            ),
-                          ),
-                        ],
-                      ),
+                        
                       //Container(
                       //  child: Text(
                       //    questions[questionIndex]['question text'],

@@ -90,13 +90,21 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
             title: Text('BIG 5 Personality Quiz'),
           ),
           body: questionIndex < questions.length
-              ? Quiz(
-                  questionIndex: questionIndex,
-                  d: nextQuestionD,
-                  sd: nextQuestionSD,
-                  n: nextQuestionN,
-                  sa: nextQuestionSA,
-                  a: nextQuestionA, )
+              ? SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: <Widget>[
+                    Quiz(
+                        questionIndex: questionIndex,
+                        d: nextQuestionD,
+                        sd: nextQuestionSD,
+                        n: nextQuestionN,
+                        sa: nextQuestionSA,
+                        a: nextQuestionA, ),
+                        
+                  ],
+                ),
+              )
               : Results(restartQuiz: resetQuiz),
         ));
   }
