@@ -14,81 +14,231 @@ class Results extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Container(
-                                  height: 50,
-                                  width: 50,
-                                  margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
-                                  child: CircularProgressIndicator(
-                                    value: extroversionScore(
-                                        extroversion()),
-                                    backgroundColor: Colors.grey,
-                                    strokeWidth: 10,
-                                    semanticsLabel: 'progress',
-                                    valueColor:
-                                        AlwaysStoppedAnimation<Color>(Colors.blue),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                    height: 50,
+                                    width: 50,
+                                    margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                    child: CircularProgressIndicator(
+                                      value: extroversionScore(
+                                          extroversion()),
+                                      backgroundColor: Colors.grey,
+                                      strokeWidth: 10,
+                                      semanticsLabel: 'progress',
+                                      valueColor:
+                                          AlwaysStoppedAnimation<Color>(Colors.blue),
+                                    ),
                                   ),
+                            Expanded(
+                              flex: 1,
+                              child: Text(
+                                'Your Extroversion Score is: ' +
+                                    extroversion().toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
                                 ),
-                          Expanded(
-                            flex: 1,
-                            child: Text(
-                              'Your Extroversion Score is: ' +
-                                  extroversion().toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                          'this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.this is a lot of stuff to write, blah blah blah.',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 50,
-                          ),
-                          ),
-                      Center(
-                        child: Text(
-                          'Your Agreeableness Score is: ' +
-                              agreeableness().toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
+                          ],
                         ),
                       ),
-                      Center(
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
                         child: Text(
-                          'Your Conscientiousness Score is: ' +
-                              conscientiousness().toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
+                            '''Extraversion (or extroversion) is characterized by excitability, sociability, talkativeness, assertiveness, and high amounts of emotional expressiveness.
+
+People who are high in extraversion are outgoing and tend to gain energy in social situations. 
+
+Being around other people helps them feel energized and excited.People who are low in extraversion (or introverted) tend to be more reserved and have less energy to expend in social settings.
+
+Social events can feel draining and introverts often require a period of solitude and quiet in order to "recharge."''',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                    height: 50,
+                                    width: 50,
+                                    margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                    child: CircularProgressIndicator(
+                                      value: agreeablenessScore(
+                                          agreeableness()),
+                                      backgroundColor: Colors.grey,
+                                      strokeWidth: 10,
+                                      semanticsLabel: 'progress',
+                                      valueColor:
+                                          AlwaysStoppedAnimation<Color>(Colors.blue),
+                                    ),
+                                  ),
+                            Expanded(
+                              child: Text(
+                                'Your Agreeableness Score is: ' +
+                                    agreeableness().toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Center(
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
                         child: Text(
-                          'Your Neuroticism Score is: ' +
-                              neuroticism().toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
+                            '''This personality dimension includes attributes such as trust, altruism, kindness, affection, and other prosocial behaviours.
+                            
+People who are high in agreeableness tend to be more cooperative while those low in this trait tend to be more competitive and sometimes even manipulative.''',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                    height: 50,
+                                    width: 50,
+                                    margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                    child: CircularProgressIndicator(
+                                      value: conscientiousnessScore(
+                                          conscientiousness()),
+                                      backgroundColor: Colors.grey,
+                                      strokeWidth: 10,
+                                      semanticsLabel: 'progress',
+                                      valueColor:
+                                          AlwaysStoppedAnimation<Color>(Colors.blue),
+                                    ),
+                                  ),
+                            Expanded(
+                              child: Text(
+                                'Your Conscientiousness Score is: ' +
+                                    conscientiousness().toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Center(
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
                         child: Text(
-                          'Your Openness to Experience Score is: ' +
-                              openness().toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
+                            '''Standard features of this dimension include high levels of thoughtfulness, good impulse control, and goal-directed behaviors.
+                            
+  Highly conscientious people tend to be organized and mindful of details. They plan ahead, think about how their behavior affects others, and are mindful of deadlines.''',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                    height: 50,
+                                    width: 50,
+                                    margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                    child: CircularProgressIndicator(
+                                      value: neuroticismScore(
+                                          neuroticism()),
+                                      backgroundColor: Colors.grey,
+                                      strokeWidth: 10,
+                                      semanticsLabel: 'progress',
+                                      valueColor:
+                                          AlwaysStoppedAnimation<Color>(Colors.blue),
+                                    ),
+                                  ),
+                            Expanded(
+                              child: Text(
+                                'Your Neuroticism Score is: ' +
+                                    neuroticism().toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Text(
+                            '''Neuroticism is a trait characterized by sadness, moodiness, and emotional instability.Individuals who are high in this trait tend to experience mood swings, anxiety, irritability, and sadness. 
+                            
+  Those low in this trait tend to be more stable and emotionally resilient.''',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                    height: 50,
+                                    width: 50,
+                                    margin: EdgeInsets.fromLTRB(15, 15, 30, 15),
+                                    child: CircularProgressIndicator(
+                                      value: opennessScore(
+                                          openness()),
+                                      backgroundColor: Colors.grey,
+                                      strokeWidth: 10,
+                                      semanticsLabel: 'progress',
+                                      valueColor:
+                                          AlwaysStoppedAnimation<Color>(Colors.blue),
+                                    ),
+                                  ),
+                            Expanded(
+                              child: Text(
+                                'Your Openness to Experience Score is: ' +
+                                    openness().toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                        child: Text(
+                            '''This trait features characteristics such as imagination and insight.
+                            
+People who are high in this trait also tend to have a broad range of interests. 
+
+They are curious about the world and other people and eager to learn new things and enjoy new experiences.
+
+People who are high in this trait tend to be more adventurous and creative.
+
+People low in this trait are often much more traditional and may struggle with abstract thinking.''',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            ),
                       ),
                       Container(
                         width: double.infinity,
