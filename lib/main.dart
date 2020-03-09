@@ -1,12 +1,9 @@
-import 'package:Big_Five_Personality_Quiz/quiz.dart';
-import 'package:Big_Five_Personality_Quiz/results.dart';
 import 'package:flutter/material.dart';
 
-
-
 import './questions.dart';
+import 'layoutUI/quiz.dart';
+import 'layoutUI/results.dart';
 
-import './results.dart';
 
 void main() {
   runApp(MyBiGFiveQuizApp());

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './logic.dart';
-import './resultscore.dart';
-import './quizbutton.dart';
+import '../logic.dart';
+import '../widgets/resultscore.dart';
+import '../widgets/quizbutton.dart';
 
 class Results extends StatelessWidget {
   final Function restartQuiz;

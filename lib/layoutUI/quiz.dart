@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'questionarea.dart';
-import './quizbutton.dart';
+import '../widgets/questionarea.dart';
+import '../widgets/quizbutton.dart';
 
 
 class Quiz extends StatelessWidget {

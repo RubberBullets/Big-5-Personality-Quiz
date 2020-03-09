@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './neumorphismUI.dart';
+import '../styling/neumorphismUI.dart';
 
 class QuizButton extends StatelessWidget {
 

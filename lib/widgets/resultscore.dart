@@ -1,7 +1,6 @@
-import 'package:Big_Five_Personality_Quiz/neumorphismUI.dart';
 import 'package:flutter/material.dart';
 
-
+import '../styling/neumorphismUI.dart';
 
 
 
