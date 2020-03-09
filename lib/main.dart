@@ -91,20 +91,20 @@ class MyBiGFiveQuizAppState extends State<MyBiGFiveQuizApp> {
           ),
           body: questionIndex < questions.length
               ? SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: <Widget>[
-                    Quiz(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: <Widget>[
+                      Quiz(
                         questionIndex: questionIndex,
                         d: nextQuestionD,
                         sd: nextQuestionSD,
                         n: nextQuestionN,
                         sa: nextQuestionSA,
-                        a: nextQuestionA, ),
-                        
-                  ],
-                ),
-              )
+                        a: nextQuestionA,
+                      ),
+                    ],
+                  ),
+                )
               : Results(restartQuiz: resetQuiz),
         ));
   }

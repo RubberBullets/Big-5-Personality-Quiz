@@ -7,7 +7,7 @@ import './questions.dart';
   }
 
 
-
+//Results Personality Section Scoring//
 
   extroversionScore(extroversion){
     return (extroversion / 40);
