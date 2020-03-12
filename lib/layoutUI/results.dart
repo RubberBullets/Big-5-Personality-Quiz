@@ -4,10 +4,13 @@ import '../logic.dart';
 import '../widgets/resultscore.dart';
 import '../widgets/quizbutton.dart';
 
+
 class Results extends StatelessWidget {
   final Function restartQuiz;
 
-  Results({@required this.restartQuiz});
+  final Function goHome;
+
+  Results({@required this.restartQuiz, this.goHome,});
 
   @override
   Widget build(BuildContext context){
@@ -20,6 +23,9 @@ class Results extends StatelessWidget {
                         progressValue: extroversionScore(extroversion()),
                         resultTotalText: ('Your Extroversion Score is: ' +
                                     extroversion().toString()),
+                        resultTotalScore: extroversion(),
+                        personalityKey: 'Extroversion',
+                        resultColor: Colors.blueAccent,
                                           ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -41,6 +47,9 @@ Social events can feel draining and introverts often require a period of solitud
                         progressValue: agreeablenessScore(agreeableness()),
                         resultTotalText: ('Your Agreeableness Score is: ' +
                                     agreeableness().toString()),
+                        resultTotalScore: agreeableness(),
+                        personalityKey: 'Agreeableness',
+                        resultColor: Colors.cyanAccent,
                                           ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -58,6 +67,9 @@ People who are high in agreeableness tend to be more cooperative while those low
                         progressValue: conscientiousnessScore(conscientiousness()),
                         resultTotalText: ('Your Conscientiousness Score is: ' +
                                     conscientiousness().toString()),
+                        resultTotalScore: conscientiousness(),
+                        personalityKey: 'Conscientiousness',
+                        resultColor: Colors.deepPurpleAccent,
                                           ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -75,6 +87,9 @@ People who are high in agreeableness tend to be more cooperative while those low
                         progressValue: neuroticismScore(neuroticism()),
                         resultTotalText: ('Your Neuroticism Score is: ' +
                                     neuroticism().toString()),
+                        resultTotalScore: neuroticism(),
+                        personalityKey: 'Neuroticism',
+                        resultColor: Colors.indigoAccent,
                                           ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -92,6 +107,9 @@ People who are high in agreeableness tend to be more cooperative while those low
                         progressValue: opennessScore(openness()),
                         resultTotalText: ('Your Openness Score is: ' +
                                     openness().toString()),
+                        resultTotalScore:openness(),
+                        personalityKey: 'Openness',
+                        resultColor: Colors.limeAccent,
                                           ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -111,7 +129,14 @@ People low in this trait are often much more traditional and may struggle with a
                             ),
                             ),
                       ),
-                      QuizButton(buttonText:'RESTART QUIZ',buttonFunction:restartQuiz,),
+                      QuizButton(
+                        buttonText:'RESTART QUIZ',
+                        buttonFunction:restartQuiz,
+                        ),
+                      QuizButton(
+                        buttonText:'QUIT TO HOME',
+                        buttonFunction: goHome,
+),
                       
                     ],
                   ),

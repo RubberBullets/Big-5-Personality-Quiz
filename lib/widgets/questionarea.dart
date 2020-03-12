@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../logic.dart';
 import '../questions.dart';
-import '../styling/neumorphismUI.dart';
+import '../styling/neumorphismui.dart';
 
 class QuestionArea extends StatelessWidget {
   final int questionIndex;

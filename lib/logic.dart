@@ -7,7 +7,7 @@ import './questions.dart';
   }
 
 
-//Results Personality Section Scoring//
+//Results Personality Section Scoring Circle bar indicator//
 
 
   extroversionScore(extroversion){
@@ -83,6 +83,8 @@ import './questions.dart';
         questions[43]['score'] -
         questions[48]['score']);
   }
+
+   
 
   openness() {
     return (8 +
