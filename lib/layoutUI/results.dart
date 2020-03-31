@@ -34,12 +34,12 @@ class Results extends StatelessWidget {
 
 People who are high in extraversion are outgoing and tend to gain energy in social situations. 
 
-Being around other people helps them feel energized and excited.People who are low in extraversion (or introverted) tend to be more reserved and have less energy to expend in social settings.
+Being around other people helps them feel energized and excited. People who are low in extraversion (or introverted) tend to be more reserved and have less energy to expend in social settings.
 
 Social events can feel draining and introverts often require a period of solitude and quiet in order to "recharge."''',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                             ),
                       ),
@@ -59,7 +59,7 @@ Social events can feel draining and introverts often require a period of solitud
 People who are high in agreeableness tend to be more cooperative while those low in this trait tend to be more competitive and sometimes even manipulative.''',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                             ),
                       ),
@@ -79,7 +79,7 @@ People who are high in agreeableness tend to be more cooperative while those low
   Highly conscientious people tend to be organized and mindful of details. They plan ahead, think about how their behavior affects others, and are mindful of deadlines.''',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                             ),
                       ),
@@ -99,7 +99,7 @@ People who are high in agreeableness tend to be more cooperative while those low
   Those low in this trait tend to be more stable and emotionally resilient.''',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                             ),
                       ),
@@ -125,7 +125,7 @@ People who are high in this trait tend to be more adventurous and creative.
 People low in this trait are often much more traditional and may struggle with abstract thinking.''',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                             ),
                       ),
@@ -137,7 +137,7 @@ People low in this trait are often much more traditional and may struggle with a
                         buttonText:'QUIT TO HOME',
                         buttonFunction: goHome,
 ),
-                      
+                      Padding(padding: EdgeInsets.only(top:40)),
                     ],
                   ),
                 );
