@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../styling/neumorphismui.dart';
 
 class ResultScore extends StatelessWidget {
   final double progressValue;
@@ -223,13 +222,7 @@ But you’re likely also more introspective than others, which helps you to exam
 
   @override
   Widget build(BuildContext context) {
-    return Neumorph(
-      yAxis: 9,
-      xAxis: 9,
-      cornerRadius: 10,
-      paddingContent: EdgeInsets.fromLTRB(5, 5, 5, 5),
-      marginContent: EdgeInsets.fromLTRB(18, 18, 18, 18),
-      child: Column(
+    return Column(
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -272,7 +265,6 @@ But you’re likely also more introspective than others, which helps you to exam
             ),
           )
         ],
-      ),
-    );
+      );
   }
 }
